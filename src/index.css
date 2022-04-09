@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'sans';
 }
 
 header {
@@ -81,7 +85,6 @@ dialog {
 .dot {
   height: 14px;
   width: 14px;
-  background: #ddd;
   border-radius: 50%;
   display: inline-block;
   margin-right: 10px;
@@ -100,7 +103,6 @@ dialog {
   height: 180px;
   padding: 5px 20px;
   color: #444;
-  background: #ddd;
   cursor: pointer;
 }
 

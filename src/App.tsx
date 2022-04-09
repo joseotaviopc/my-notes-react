@@ -58,7 +58,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="font-sans">
       <header>
         <div className="container">
           <div className="logo">{logo}</div>
@@ -69,31 +69,35 @@ function App() {
         <aside>
           <div className="title">
             <h3>Categories</h3>
-            <button onClick={() => openDialog("category")}>Add new</button>
+            <button className="rounded-md block w-auto px-4 bg-indigo-300 hover:bg-indigo-600 hover:text-slate-300" onClick={() => openDialog("category")}>Add new</button>
           </div>
+          {/* Buscar categorias na API */}
           <div className="category">
-            <span className="dot" style={{ backgroundColor: "#87cefa" }}></span>
+            <span className="dot bg-indigo-600"></span>
+            {/* Carregar categoria/alterar/fechar */}
             <span>React</span>
           </div>
           <div className="category">
-            <span className="dot"></span>
+            <span className="dot bg-indigo-600"></span>
           </div>
         </aside>
 
         <section>
-          <div className="title">
+          <div className="title ">
             <h3>Notes</h3>
-            <button onClick={() => openDialog("note")}>Add new</button>
+            <button className="rounded-md block w-auto px-4 bg-indigo-300 hover:bg-indigo-600 hover:text-slate-300" onClick={() => openDialog("note")}>Add new</button>
           </div>
+          {/* Buscar categorias na API */}
           <div className="notes-list">
-            <div className="note" style={{ backgroundColor: "#87cefa" }}>
+            <div className="note bg-indigo-300 hover:bg-indigo-600 hover:text-slate-300">
+              {/* Carregar Note/alterar/fechar */}
               <h4>Title</h4>
               <p>Content</p>
             </div>
-            <div className="note"></div>
-            <div className="note"></div>
-            <div className="note"></div>
-            <div className="note"></div>
+            <div className="note bg-indigo-300 hover:bg-indigo-600 hover:text-slate-300"></div>
+            <div className="note bg-indigo-300 hover:bg-indigo-600 hover:text-slate-300"></div>
+            <div className="note bg-indigo-300 hover:bg-indigo-600 hover:text-slate-300"></div>
+            <div className="note bg-indigo-300 hover:bg-indigo-600 hover:text-slate-300"></div>
           </div>
         </section>
       </main>
@@ -102,6 +106,7 @@ function App() {
         <div className="overlay">
           {isNoteDialogOpen && (
             <dialog className="center">
+              {/* Solicitar title(input text), content(textarea) e categoryId(select) */}
               <div className="dialog-content">
                 <h2>Note Dialog Title</h2>
                 <p>
@@ -111,12 +116,14 @@ function App() {
               </div>
               <div className="dialog-actions">
                 <button onClick={() => closeDialog("note")}>Cancel</button>
+                {/* Create API POST */}
                 <button onClick={() => closeDialog("note")}>Confirm</button>
               </div>
             </dialog>
           )}
           {isCategoryDialogOpen && (
             <dialog className="center">
+              {/* Solicitar name(input text) e color(input text) */}
               <div className="dialog-content">
                 <h2>Category Dialog Title</h2>
                 <p>
@@ -126,6 +133,7 @@ function App() {
               </div>
               <div className="dialog-actions">
                 <button onClick={() => closeDialog("category")}>Cancel</button>
+                {/* Create API POST */}
                 <button onClick={() => closeDialog("category")}>Confirm</button>
               </div>
             </dialog>
